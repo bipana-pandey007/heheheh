@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ChatbotIcon from './components/ChatbotIcon'
 import ChatForm from './components/ChatForm'
+import ChatMessage from './components/ChatMessage';
+
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -36,9 +38,12 @@ const App = () => {
                ))}
             </div>
             <div className = "message user-message">
-              <p className="message-text"> hello!! i have a question
+              {/* <p className="message-text"> hi
                          
-               </p>
+               </p> */}
+               {chatHistory.map((chat, index) => 
+                <ChatMessage key={index} chat={chat}/> )}
+               </div>
           </div>
             
 
@@ -48,7 +53,7 @@ const App = () => {
            <ChatForm setChatHistory={setChatHistory}/>
       </div>
      </div >
-    </div>
+   
 
   )
 }
